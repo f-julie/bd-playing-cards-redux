@@ -3,6 +3,8 @@ package com.frank;
 // abstract on a class means the classs cannot be instantiated and is meant to always be a superclass
 // The CAN be used to hold a reference to a subclass of it's type (Polymorphism)
 
+import java.util.Random;
+
 abstract public class PlayingCard {
 	
 	private int value;    
@@ -87,6 +89,8 @@ abstract public class PlayingCard {
 		}
 		return true;
 	}
+
+
 
 // super class is required to have any method where Polymorphism might be used - even if it doesn't need it
 //

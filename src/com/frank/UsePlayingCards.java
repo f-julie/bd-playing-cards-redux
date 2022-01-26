@@ -92,9 +92,9 @@ ArrayList<PlayingCard> myCards = new ArrayList();  // Defined an ArrayList of su
 
 		// If an object of a class is used to call a non-static method, the data in the object IS used by the method
 		// If an object of a class is used to call a static method, the data in the object is NOT used by the method
-		displayCard(aUSACard2.pickACard());  // Use an object of the class to call a static method in the class
-		displayCard(aUSACard.pickACard());   // Use an object of the class to call a static method in the class
-		displayCard(pickACard());            // Only need teh metthod name if static import is used for teh method
+		displayCard(aUSACard2.pickACard());            // Use an object of the class to call a static method in the class
+		displayCard(ItalianPlayingCard.pickACard());   // Use the class name to call a static method in the class
+		displayCard(pickACard());                      // Only need the method name if static import is used for the method
 
 	}  // End of main()
 

@@ -106,6 +106,12 @@ public class AmericanPlayingCard extends PlayingCard{
 		                                                          // if omitted super. we would be calling ourselves
 	}
 
+	// Note: Since this class doesn't add any new data memebers
+	//       the super class .eauals() and .hashCode() methods
+	//           handle both sets of processing well
+
+
+	// override the super class abstract showCard method
 	public void showCard() {
 		System.out.println(this.toString());
 	}
@@ -123,11 +129,12 @@ public class AmericanPlayingCard extends PlayingCard{
 //      Display suit to see if code actuall generated a random suit
 //		System.out.println("Suit picked: " + aRandomObject.nextInt((((suits.length-1)+1)-1)));
 
-	    // Pick a suit form the array created above using a random index
+		// Pick a suit form the array created above using a random index
 		//                        RandomClassObj.nextInt( (max-min)+1) - min
 		String newCardSuit = suits[aRandomObject.nextInt(((suits.length-1)+1))]; //  (since smallest index is 0, no need to +1 and - min
 		return new AmericanPlayingCard(newCardVaue, newCardSuit );
 	}
+
 
 
 }

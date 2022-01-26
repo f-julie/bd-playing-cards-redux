@@ -2,6 +2,7 @@ package com.frank;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 import java.util.TreeMap;
 
 public class ItalianPlayingCard extends PlayingCard {
@@ -70,9 +71,29 @@ public class ItalianPlayingCard extends PlayingCard {
 			  +" - Suit: "  + getSuit()
 			  +" - super.toString()=" + super.toString() + "\n";
 	}
+
     // this. reference the object used to invoke the method (this.toString() - this class's toString()
 	public void showCard() {
 		System.out.println(this.toString());
+	}
+
+	// generate a random PlayingCard (super class for all our Playing cards iun this application)
+	// because this method is static we can use the class name to invoke or an object of the class
+	public static PlayingCard pickACard() {
+		Random aRandomObject = new Random();
+
+		// Convert the suitMap to an array so we can pick a suit with a random index
+		String[] suits =  suitMap.keySet().toArray(new String[suitMap.size()]);
+
+		int newCardVaue = (aRandomObject.nextInt(13 - 1 + 1) + 1);
+
+//      Display suit to see if code actuall generated a random suit
+//		System.out.println("Suit picked: " + aRandomObject.nextInt((((suits.length-1)+1)-1)));
+
+		// Pick a suit form the array created above using a random index
+		//                        RandomClassObj.nextInt( (max-min)+1) - min
+		String newCardSuit = suits[aRandomObject.nextInt(((suits.length-1)+1))]; //  (since smallest index is 0, no need to +1 and - min
+		return new ItalianPlayingCard(newCardVaue, newCardSuit );
 	}
 }
 
