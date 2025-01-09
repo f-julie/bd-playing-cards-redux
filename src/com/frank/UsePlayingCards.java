@@ -1,8 +1,8 @@
 package com.frank;
 
 import java.util.ArrayList;
-import static java.lang.System.out;   // Explicit import of System.out object
-import static com.frank.AmericanPlayingCard.pickACard;
+import static java.lang.System.out;   // Explicit static import of System.out object
+import static com.frank.AmericanPlayingCard.pickACard; // Static import, so we don't need class name to invoke
 
 public class UsePlayingCards {
 // This is our application program which will instantiate object and use their methods to manipulate them
@@ -16,7 +16,7 @@ public class UsePlayingCards {
 		aUSACard.showCard();  // runs the AmericanPlayingCard showCard()
 
 		AmericanPlayingCard aUSACard2 = new AmericanPlayingCard(14, "SPADES");
-// Because System out object was staticlly imported, the System. (clasname) is optional
+// Because System out object was statically imported, the System. (classname) is optional
 		out.println("aUSACard2 is :");
 		aUSACard2.showCard();
 
@@ -98,6 +98,7 @@ ArrayList<PlayingCard> myCards = new ArrayList();  // Defined an ArrayList of su
 
 	}  // End of main()
 
+	// Helper methods are coded after the method/process they're helping
 	// This must be static because what calls it is static
 	static void displayCard(PlayingCard cardyMcCardCard) {  // a function receives a super class object
 		cardyMcCardCard.showCard();  // use the super class object to run a method - Polymorphism will run the correct method

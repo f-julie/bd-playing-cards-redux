@@ -5,6 +5,7 @@ package com.frank;
 
 import java.util.Random;
 
+// Abstract means this may only be a superclass - cannot instantiate objects of the class
 abstract public class PlayingCard {
 	
 	private int value;    
